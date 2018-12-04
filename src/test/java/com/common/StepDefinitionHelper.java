@@ -32,7 +32,6 @@ public class StepDefinitionHelper extends Helper {
 
 	public void configureBaseUri() throws Exception {
 		requestSpecification = RestAssured.with();
-		System.out.println(configMap.get("baseURI"));
 		requestSpecification.given().contentType(ContentType.JSON).baseUri(configMap.get("baseURI"));
 		System.out.println(requestSpecification.toString());
 	}
