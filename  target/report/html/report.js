@@ -1,15 +1,15 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureFiles/Order/CreateOrder.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureFiles/user/CreateUser.feature");
 formatter.feature({
   "comments": [
     {
       "line": 1,
-      "value": "#Sample Feature Definition Template"
+      "value": "#Author: Arunkumar"
     }
   ],
   "line": 3,
-  "name": "To create new order",
+  "name": "To test create user functionality",
   "description": "",
-  "id": "to-create-new-order",
+  "id": "to-test-create-user-functionality",
   "keyword": "Feature",
   "tags": [
     {
@@ -20,15 +20,15 @@ formatter.feature({
 });
 formatter.scenarioOutline({
   "line": 6,
-  "name": "Title of your scenario outline",
+  "name": "Create new user",
   "description": "",
-  "id": "to-create-new-order;title-of-your-scenario-outline",
+  "id": "to-test-create-user-functionality;create-new-user",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 5,
-      "name": "@tag2"
+      "name": "@tag1"
     }
   ]
 });
@@ -39,7 +39,7 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "The user makes the post call to the endpoint \"/store/order\" with \"\u003cid\u003e\",\"\u003cpetId\u003e\",\"\u003cquantity\u003e\",\"\u003cshipdate\u003e\",\"\u003cstatus\u003e\" and \"\u003ccomplete\u003e\"",
+  "name": "The user makes the post call for the endpoint \"/user\" with \"\u003cid\u003e\",\"\u003cusername\u003e\",\"\u003cfirstname\u003e\",\"\u003clastname\u003e\",\"\u003cemail\u003e\",\"\u003cpassword\u003e\",\"\u003cphone\u003e\",\"\u003cuserstatus\u003e\"",
   "keyword": "When "
 });
 formatter.step({
@@ -49,47 +49,51 @@ formatter.step({
 });
 formatter.step({
   "line": 10,
-  "name": "The user validates the \"\u003cid\u003e\",\"\u003cpetId\u003e\",\"\u003cquantity\u003e\",\"\u003cshipdate\u003e\",\"\u003cstatus\u003e\" and \"\u003ccomplete\u003e\"",
+  "name": "The user validates the \"\u003cid\u003e\",\"\u003cusername\u003e\",\"\u003cfirstname\u003e\",\"\u003clastname\u003e\",\"\u003cemail\u003e\",\"\u003cpassword\u003e\",\"\u003cphone\u003e\",\"\u003cuserstatus\u003e\"",
   "keyword": "And "
 });
 formatter.examples({
   "line": 12,
   "name": "",
   "description": "",
-  "id": "to-create-new-order;title-of-your-scenario-outline;",
+  "id": "to-test-create-user-functionality;create-new-user;",
   "rows": [
     {
       "cells": [
         "id",
-        "petId",
-        "quantity",
-        "shipdate",
-        "status",
-        "complete"
+        "username",
+        "firstname",
+        "lastname",
+        "email",
+        "password",
+        "phone",
+        "userstatus"
       ],
       "line": 13,
-      "id": "to-create-new-order;title-of-your-scenario-outline;;1"
+      "id": "to-test-create-user-functionality;create-new-user;;1"
     },
     {
       "cells": [
         "123",
-        "193849",
-        "1",
-        "2018-12-04T05:00:07.538Z",
-        "placed",
-        "false"
+        "guru87",
+        "guru",
+        "m",
+        "guru@gmail.com",
+        "guru87",
+        "9087654321",
+        "23"
       ],
       "line": 14,
-      "id": "to-create-new-order;title-of-your-scenario-outline;;2"
+      "id": "to-test-create-user-functionality;create-new-user;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
   "line": 14,
-  "name": "Title of your scenario outline",
+  "name": "Create new user",
   "description": "",
-  "id": "to-create-new-order;title-of-your-scenario-outline;;2",
+  "id": "to-test-create-user-functionality;create-new-user;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -99,7 +103,7 @@ formatter.scenario({
     },
     {
       "line": 5,
-      "name": "@tag2"
+      "name": "@tag1"
     }
   ]
 });
@@ -110,14 +114,16 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "The user makes the post call to the endpoint \"/store/order\" with \"123\",\"193849\",\"1\",\"2018-12-04T05:00:07.538Z\",\"placed\" and \"false\"",
+  "name": "The user makes the post call for the endpoint \"/user\" with \"123\",\"guru87\",\"guru\",\"m\",\"guru@gmail.com\",\"guru87\",\"9087654321\",\"23\"",
   "matchedColumns": [
     0,
     1,
     2,
     3,
     4,
-    5
+    5,
+    6,
+    7
   ],
   "keyword": "When "
 });
@@ -128,14 +134,16 @@ formatter.step({
 });
 formatter.step({
   "line": 10,
-  "name": "The user validates the \"123\",\"193849\",\"1\",\"2018-12-04T05:00:07.538Z\",\"placed\" and \"false\"",
+  "name": "The user validates the \"123\",\"guru87\",\"guru\",\"m\",\"guru@gmail.com\",\"guru87\",\"9087654321\",\"23\"",
   "matchedColumns": [
     0,
     1,
     2,
     3,
     4,
-    5
+    5,
+    6,
+    7
   ],
   "keyword": "And "
 });
@@ -143,44 +151,52 @@ formatter.match({
   "location": "CommonScenarioSteps.i_am_using_the_baseURI()"
 });
 formatter.result({
-  "duration": 3663068103,
+  "duration": 1505647435,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "/store/order",
-      "offset": 46
+      "val": "/user",
+      "offset": 47
     },
     {
       "val": "123",
+      "offset": 60
+    },
+    {
+      "val": "guru87",
       "offset": 66
     },
     {
-      "val": "193849",
-      "offset": 72
+      "val": "guru",
+      "offset": 75
     },
     {
-      "val": "1",
-      "offset": 81
+      "val": "m",
+      "offset": 82
     },
     {
-      "val": "2018-12-04T05:00:07.538Z",
-      "offset": 85
+      "val": "guru@gmail.com",
+      "offset": 86
     },
     {
-      "val": "placed",
+      "val": "guru87",
+      "offset": 103
+    },
+    {
+      "val": "9087654321",
       "offset": 112
     },
     {
-      "val": "false",
+      "val": "23",
       "offset": 125
     }
   ],
-  "location": "CreateNewOrder.the_user_makes_the_post_call_to_the_endpoint_with_and(String,String,String,String,String,String,String)"
+  "location": "CreateNewUser.the_user_makes_the_post_call_for_the_endpoint_with(String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 7034988736,
+  "duration": 3466458303,
   "status": "passed"
 });
 formatter.match({
@@ -193,8 +209,9 @@ formatter.match({
   "location": "CommonScenarioSteps.i_need_to_get_a_response_code(int)"
 });
 formatter.result({
-  "duration": 205468470,
-  "status": "passed"
+  "duration": 145659151,
+  "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c200\u003e doesn\u0027t match actual status code \u003c500\u003e.\n\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:83)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:77)\r\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:451)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:613)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)\r\n\tat io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)\r\n\tat io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)\r\n\tat com.common.StepDefinitionHelper.validateResponseCode(StepDefinitionHelper.java:97)\r\n\tat com.common.CommonScenarioSteps.i_need_to_get_a_response_code(CommonScenarioSteps.java:24)\r\n\tat ✽.Then user need to get a response code: 200(src/test/resources/FeatureFiles/user/CreateUser.feature:9)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -203,30 +220,37 @@ formatter.match({
       "offset": 24
     },
     {
-      "val": "193849",
+      "val": "guru87",
       "offset": 30
     },
     {
-      "val": "1",
+      "val": "guru",
       "offset": 39
     },
     {
-      "val": "2018-12-04T05:00:07.538Z",
-      "offset": 43
+      "val": "m",
+      "offset": 46
     },
     {
-      "val": "placed",
-      "offset": 70
+      "val": "guru@gmail.com",
+      "offset": 50
     },
     {
-      "val": "false",
-      "offset": 83
+      "val": "guru87",
+      "offset": 67
+    },
+    {
+      "val": "9087654321",
+      "offset": 76
+    },
+    {
+      "val": "23",
+      "offset": 89
     }
   ],
-  "location": "CreateNewOrder.the_user_validates_the_and(String,String,String,String,String,String)"
+  "location": "CreateNewUser.the_user_validates_the(String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 182487483,
-  "status": "passed"
+  "status": "skipped"
 });
 });
