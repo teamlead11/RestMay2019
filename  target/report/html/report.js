@@ -1,25 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureFiles/user/createUserList.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureFiles/pet/findByID.feature");
 formatter.feature({
-  "comments": [
-    {
-      "line": 1,
-      "value": "#Sample Feature Definition Template"
-    }
-  ],
-  "line": 3,
+  "line": 1,
   "name": "Title of your feature",
   "description": "I want to use this template for my feature file",
   "id": "title-of-your-feature",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "line": 2,
-      "name": "@tag"
-    }
-  ]
+  "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 7,
+  "line": 5,
   "name": "Title of your scenario",
   "description": "",
   "id": "title-of-your-feature;title-of-your-scenario",
@@ -27,85 +15,49 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 6,
+      "line": 4,
       "name": "@tag1"
     }
   ]
 });
 formatter.step({
-  "line": 8,
+  "line": 6,
   "name": "user is using the baseURI",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 9,
-  "name": "the user makes post call to the endpoint \"/user/createWithArray\"",
-  "rows": [
-    {
-      "cells": [
-        "id",
-        "username",
-        "fname",
-        "lname",
-        "email",
-        "password",
-        "phone",
-        "userstatus"
-      ],
-      "line": 10
-    },
-    {
-      "cells": [
-        "123",
-        "user1",
-        "user",
-        "one",
-        "user1@test.com",
-        "pass1",
-        "123456789",
-        "0"
-      ],
-      "line": 11
-    },
-    {
-      "cells": [
-        "124",
-        "user2",
-        "user",
-        "two",
-        "user2@test.com",
-        "pass2",
-        "123456781",
-        "0"
-      ],
-      "line": 12
-    }
-  ],
+  "line": 7,
+  "name": "The user makes a GET call to the resource \"pet/1919\"",
   "keyword": "When "
 });
 formatter.step({
-  "line": 13,
+  "line": 8,
   "name": "user need to get a response code: 200",
   "keyword": "Then "
+});
+formatter.step({
+  "line": 9,
+  "name": "The user validates the response body",
+  "keyword": "And "
 });
 formatter.match({
   "location": "CommonScenarioSteps.i_am_using_the_baseURI()"
 });
 formatter.result({
-  "duration": 3902552327,
+  "duration": 3771813537,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "/user/createWithArray",
-      "offset": 42
+      "val": "pet/1919",
+      "offset": 43
     }
   ],
-  "location": "CreateNewUserList.the_user_makes_post_call_to_the_endpoint(String,DataTable)"
+  "location": "FindPet.the_user_makes_a_GET_call_to_the_resource(String)"
 });
 formatter.result({
-  "duration": 9595282003,
+  "duration": 7923162691,
   "status": "passed"
 });
 formatter.match({
@@ -118,7 +70,14 @@ formatter.match({
   "location": "CommonScenarioSteps.i_need_to_get_a_response_code(int)"
 });
 formatter.result({
-  "duration": 215937346,
+  "duration": 177613383,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FindPet.the_user_validates_the_response_body()"
+});
+formatter.result({
+  "duration": 553588606,
   "status": "passed"
 });
 });

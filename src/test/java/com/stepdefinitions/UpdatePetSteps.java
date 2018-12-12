@@ -62,5 +62,6 @@ public class UpdatePetSteps extends Helper {
 		Map<String, String> myMap = details.asMap(String.class, String.class);
 		NewPetRequest outrespJava = response.as(NewPetRequest.class);
 		Assert.assertEquals(myMap.get("name"), outrespJava.getName());
+		Assert.assertEquals(myMap.get("name"), outrespJava.getId());
 	}
 }
