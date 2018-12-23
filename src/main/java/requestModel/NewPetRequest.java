@@ -64,6 +64,10 @@ public class NewPetRequest {
 	public String getStatus() {
 		return this.status;
 	}
+
+	public static void createpet(){
+		
+	}
 }
 
 
