@@ -41,7 +41,10 @@ public class CreateNewUserList extends Helper {
 		obj2.setUsername(userDataMap.get(1).get("password"));
 		obj2.setUsername(userDataMap.get(1).get("phone"));
 		obj2.setUserStatus(Integer.parseInt(userDataMap.get(1).get("userstatus")));
+
 		List<CreateUserList> list = new ArrayList<CreateUserList>();
+		list.add(obj1);
+		list.add(obj2);
 
 		response = commonCode.makePostCallWithHeader(resource, list, headers);
 		System.out.println(response.getStatusCode());
