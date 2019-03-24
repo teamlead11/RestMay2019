@@ -11,4 +11,4 @@ Feature: To test create user functionality
 
     Examples: 
       | id  | username | firstname | lastname | email          | password | phone      | userstatus |
-      | 123 | guru87   | guru      | m        | guru@gmail.com | guru87   | 9087654321 |         23 |
+      | 123 | guru87   | guru      | m        | guru@gmail.com | guru87   | 9087654321 |          0 |
