@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureFiles/user/UpdateUser.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureFiles/pet/FindByStatus.feature");
 formatter.feature({
   "comments": [
     {
@@ -7,9 +7,9 @@ formatter.feature({
     }
   ],
   "line": 3,
-  "name": "Update user details",
-  "description": "",
-  "id": "update-user-details",
+  "name": "Title of your feature",
+  "description": "I want to use this template for my feature file",
+  "id": "title-of-your-feature",
   "keyword": "Feature",
   "tags": [
     {
@@ -19,42 +19,27 @@ formatter.feature({
   ]
 });
 formatter.scenario({
-  "line": 6,
-  "name": "update the user with valid details",
+  "line": 7,
+  "name": "Title of your scenario",
   "description": "",
-  "id": "update-user-details;update-the-user-with-valid-details",
+  "id": "title-of-your-feature;title-of-your-scenario",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 5,
+      "line": 6,
       "name": "@tag1"
     }
   ]
 });
 formatter.step({
-  "line": 7,
+  "line": 8,
   "name": "user is using the baseURI",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "The user makes the put call to the resource to update user \"/user/gopiselenium\"",
-  "rows": [
-    {
-      "cells": [
-        "91782",
-        "gopiselenium",
-        "gopi",
-        "tester",
-        "gopi@gmail.com",
-        "pass@123",
-        "98765",
-        "0"
-      ],
-      "line": 9
-    }
-  ],
+  "line": 9,
+  "name": "The user makes a get call to the resource \"/pet/findByStatus?status\u003dsold\" to find the sold status",
   "keyword": "When "
 });
 formatter.step({
@@ -64,42 +49,27 @@ formatter.step({
 });
 formatter.step({
   "line": 11,
-  "name": "The user should see the updated values",
-  "rows": [
-    {
-      "cells": [
-        "91782",
-        "gopiselenium",
-        "gopi",
-        "tester",
-        "gopi@gmail.com",
-        "pass@123",
-        "98765",
-        "0"
-      ],
-      "line": 12
-    }
-  ],
+  "name": "The user should see only the sold pet in the response",
   "keyword": "And "
 });
 formatter.match({
   "location": "CommonScenarioSteps.i_am_using_the_baseURI()"
 });
 formatter.result({
-  "duration": 840105926,
+  "duration": 702822345,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "/user/gopiselenium",
-      "offset": 60
+      "val": "/pet/findByStatus?status\u003dsold",
+      "offset": 43
     }
   ],
-  "location": "UpdateUserSteps.the_user_makes_the_put_call_to_the_resource_to_update_user(String,DataTable)"
+  "location": "FindByStatus.the_user_makes_a_get_call_to_the_resource_to_find_the_status(String)"
 });
 formatter.result({
-  "duration": 2259875738,
+  "duration": 1663355360,
   "status": "passed"
 });
 formatter.match({
@@ -112,14 +82,14 @@ formatter.match({
   "location": "CommonScenarioSteps.i_need_to_get_a_response_code(int)"
 });
 formatter.result({
-  "duration": 130664259,
+  "duration": 2659083,
   "status": "passed"
 });
 formatter.match({
-  "location": "UpdateUserSteps.the_user_should_see_the_updated_values(DataTable)"
+  "location": "FindByStatus.the_user_should_see_only_the_sold_pet_in_the_response()"
 });
 formatter.result({
-  "duration": 167626917354,
+  "duration": 696733359,
   "status": "passed"
 });
 });

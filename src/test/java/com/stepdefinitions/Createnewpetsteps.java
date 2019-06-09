@@ -11,7 +11,7 @@ import com.itextpdf.text.log.SysoCounter;
 
 import cucumber.api.java.en.When;
 import requestModel.Category;
-import requestModel.NewPetRequest;
+import requestModel.PetModel;
 import requestModel.Tags;
 
 public class Createnewpetsteps extends Helper {
@@ -24,7 +24,7 @@ public class Createnewpetsteps extends Helper {
 		response = null;
 		response = commonCode.makeGetCallWithHeaders(resource, headers);
 		response.prettyPrint();
-		NewPetRequest test = response.as(NewPetRequest.class);
+		PetModel test = response.as(PetModel.class);
 		System.out.println(test.getName()+"test");
 	}
 
@@ -46,7 +46,7 @@ public class Createnewpetsteps extends Helper {
 		tag2.setId(3);
 		tag2.setName("tommy2");
 
-		NewPetRequest newpetobj = new NewPetRequest();
+		PetModel newpetobj = new PetModel();
 		newpetobj.setId(2);
 		newpetobj.setName("tommy");
 		newpetobj.setStatus("available");
@@ -64,7 +64,7 @@ public class Createnewpetsteps extends Helper {
 		newpetobj.setTags(taglist);
 
 		response = commonCode.makePostCallWithHeader(resource, newpetobj, headers);
-		NewPetRequest test = response.as(NewPetRequest.class);
+		PetModel test = response.as(PetModel.class);
 		System.out.println(test.getName()+"test");
 
 	}
@@ -85,7 +85,7 @@ public class Createnewpetsteps extends Helper {
 		tag2.setId(5);
 		tag2.setName("tommy2Put");
 
-		NewPetRequest newpetobj = new NewPetRequest();
+		PetModel newpetobj = new PetModel();
 		newpetobj.setId(4);
 		newpetobj.setName("tommyPut");
 		newpetobj.setStatus("available");
@@ -103,7 +103,7 @@ public class Createnewpetsteps extends Helper {
 		newpetobj.setTags(taglist);
 
 		response = commonCode.makePutCallWithHeader(resource, newpetobj, headers);
-		NewPetRequest test = response.as(NewPetRequest.class);
+		PetModel test = response.as(PetModel.class);
 		System.out.println(test.getName()+"test");
 	}
 

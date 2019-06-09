@@ -10,7 +10,7 @@ import com.itextpdf.text.log.SysoCounter;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import requestModel.NewPetRequest;
+import requestModel.PetModel;
 
 public class FindPet extends Helper {
 
@@ -27,7 +27,7 @@ public class FindPet extends Helper {
 	@Then("^The user validates the response body$")
 	public void the_user_validates_the_response_body() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		NewPetRequest objpet = response.as(NewPetRequest.class);
+		PetModel objpet = response.as(PetModel.class);
 		System.out.println(objpet.getName());
 		Assert.assertEquals("valueimplcat", objpet.getName());
 	}

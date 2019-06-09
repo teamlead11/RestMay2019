@@ -3,7 +3,7 @@ package requestModel;
 import java.util.List;
 
 
-public class NewPetRequest {
+public class PetModel {
 
 	private long id;
 

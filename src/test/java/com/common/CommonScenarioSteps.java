@@ -14,16 +14,15 @@ public class CommonScenarioSteps extends Helper {
 	@Given("^user is using the baseURI$")
 	public void i_am_using_the_baseURI() throws Exception {
 		commonCode.configureBaseUri();
+		System.out.println("given");
 	}
 
 	@Then("^user need to get a response code: (\\d+)$")
 	public void i_need_to_get_a_response_code(int code) throws Exception {
 		statusCode = code;
-		if (response != null) {
-			validatableResponseJson = null;
-			validatableResponseJson = commonCode.validateResponseCode(code);
-			Assert.assertEquals(code, response.getStatusCode());
-		}
+
+		Assert.assertEquals(code, response.getStatusCode());
+		System.out.println(response.getStatusCode());
 	}
 
 	@Then("^I validate the error response message\\.$")
@@ -40,7 +39,5 @@ public class CommonScenarioSteps extends Helper {
 	public void I_verify_the_response_fields(List<String> responseFields) throws Exception {
 		commonCode.verifyResponseFields(responseFields);
 	}
-	
-	
-	
+
 }

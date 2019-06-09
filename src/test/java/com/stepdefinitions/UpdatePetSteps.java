@@ -15,7 +15,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.response.Response;
 import requestModel.Category;
-import requestModel.NewPetRequest;
+import requestModel.PetModel;
 import requestModel.Tags;
 
 public class UpdatePetSteps extends Helper {
@@ -29,7 +29,7 @@ public class UpdatePetSteps extends Helper {
 		headers.put("Content-Type", "application/json");
 		response = null;
 		Map<String, String> petDetailsMap = petDetails.asMap(String.class, String.class);
-		NewPetRequest newPet = new NewPetRequest();
+		PetModel newPet = new PetModel();
 		newPet.setId(Long.parseLong(petDetailsMap.get("id")));
 		newPet.setName(petDetailsMap.get("name"));
 		newPet.setStatus(petDetailsMap.get("status"));
@@ -60,7 +60,7 @@ public class UpdatePetSteps extends Helper {
 	public void the_user_validates_the_updated_pet_details(DataTable details) throws Throwable {
 
 		Map<String, String> myMap = details.asMap(String.class, String.class);
-		NewPetRequest outrespJava = response.as(NewPetRequest.class);
+		PetModel outrespJava = response.as(PetModel.class);
 		Assert.assertEquals(myMap.get("name"), outrespJava.getName());
 		Assert.assertEquals(myMap.get("name"), outrespJava.getId());
 	}
