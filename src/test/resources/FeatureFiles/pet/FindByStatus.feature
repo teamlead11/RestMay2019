@@ -1,10 +1,9 @@
 #Author: your.email@your.domain.com
 @tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: To test pet servcice 
 
   @tag1
-  Scenario: Title of your scenario
+  Scenario: find by sold status
     Given user is using the baseURI
     When The user makes a get call to the resource "/pet/findByStatus?status=sold" to find the sold status
     Then user need to get a response code: 200
